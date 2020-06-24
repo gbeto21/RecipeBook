@@ -1,0 +1,13 @@
+
+    <div class="container">
+        <label for="name" class="col-sm-2 col-form-label col-form-label-lg">Name: </label>
+        <input type="text" class="form-control" [(ngModel)]="name">
+    </div>
+
+    <div class="container">
+        <p>Welcome </p><p>{{name}}</p>
+    </div>
+
+    <div class="container">
+        <button [disabled]="name===''" class="btn btn-success" type="submit" (click)="name =''">Reset name</button>
+    </div>
