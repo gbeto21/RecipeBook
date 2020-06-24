@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivesComponent implements OnInit {
 
   showSecret: Boolean = false
-  logs: number[] = [];
-  logsCounter: number=0;
+  logs = [];
 
   constructor() { }
 
@@ -18,8 +17,7 @@ export class DirectivesComponent implements OnInit {
 
   addLog(){
     this.showSecret = !this.showSecret;
-    this.logsCounter++;
-    this.logs.push(this.logsCounter)
+    this.logs.push(new Date)
   }
 
 }
