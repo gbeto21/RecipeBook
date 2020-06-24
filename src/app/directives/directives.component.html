@@ -1,0 +1,13 @@
+<div class="container">
+    <!-- <button class="btn btn-success" type="submit" (click)="showSecret = !showSecret">Show secret</button> -->
+    <button class="btn btn-success" type="submit" (click)="addLog()">Show secret</button>
+    <p *ngIf="showSecret">This is a secret.</p>
+</div>
+<div class="container">
+    <p 
+        *ngFor="let log of logs" 
+        [ngStyle]="{backgroundColor: log >= 5 ? 'darkgreen' : 'transparent'}"
+        [ngClass]="{'green-text': log >=5}"
+
+        >{{log}}</p>
+    </div>

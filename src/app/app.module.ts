@@ -7,13 +7,15 @@ import { WarningComponent } from './WarningComponent/Warning.component';
 import { SuccessComponent } from './success/success.component';
 import { FormsModule } from "@angular/forms";
 import { BindingComponent } from './binding/binding.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WarningComponent,
     SuccessComponent,
-    BindingComponent
+    BindingComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
