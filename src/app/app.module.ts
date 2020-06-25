@@ -8,6 +8,9 @@ import { SuccessComponent } from './success/success.component';
 import { FormsModule } from "@angular/forms";
 import { BindingComponent } from './binding/binding.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { GameControlComponent } from './game-control/game-control.component';
+import { OddComponent } from './odd/odd.component';
+import { EvenComponent } from './even/even.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { DirectivesComponent } from './directives/directives.component';
     WarningComponent,
     SuccessComponent,
     BindingComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent
   ],
   imports: [
     BrowserModule,
