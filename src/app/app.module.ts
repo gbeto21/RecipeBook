@@ -31,16 +31,15 @@ import { RecipeService } from './recipes/recipe-list/recipe.service';
     RecipeStartComponent,
     RecipeEditComponent
   ],
-    
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
     AppRoutingModule
   ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
+

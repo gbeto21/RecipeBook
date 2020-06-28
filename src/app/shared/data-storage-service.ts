@@ -14,7 +14,16 @@ export class DataStorageService{
         this.http
             .put('https://recipe-book-c2f8d.firebaseio.com/recipes.json',recipes)
             .subscribe(response=>{
-                
+
+            })
+    }
+
+    fetchRecipes(){
+        this.http
+            .get<Recipe[]>('https://recipe-book-c2f8d.firebaseio.com/recipes.json')
+            .subscribe(recipes=>{
+                this.recipeService.setRecipes(recipes);
+                console.log(this.recipeService.getRecipes());
             })
     }
 
