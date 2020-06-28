@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onFetchData(){
-    this.dataStoraeService.fetchRecipes();
+    this.dataStoraeService.fetchRecipes().subscribe();
   }
 
 }
