@@ -25,14 +25,6 @@ import { RecipesRoutingModule } from './recipies-routing.module';
         CommonModule,
         ReactiveFormsModule,
         RecipesRoutingModule
-    ],
-    exports:[
-        RecipesComponent,
-        RecipeListComponent,
-        RecipeDetailComponent,
-        RecipeItemComponent,
-        RecipeStartComponent,
-        RecipeEditComponent,
     ]
 })
 export class RecipesMoule{
