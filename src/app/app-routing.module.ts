@@ -8,12 +8,12 @@ const appRoutes: Routes = [
         loadChildren: ()=> import('./recipes/recipes.module').then(m=>m.RecipesMoule)
     },
     { 
-        path: 'shopping-list', 
-        loadChildren: './shooping-list.module#ShoppingListModule'
+        path: 'shopping-list',
+        loadChildren: ()=> import('./shopping-list/shopping-list.module').then(m=>m.ShoppingListModule)
     },
     {
         path: 'auth',
-        loadChildren: './auth/auth.module#AuthModule'
+        loadChildren: ()=> import('./auth/auth.module').then(m=>m.AuthModule)
     }
 ]
 
