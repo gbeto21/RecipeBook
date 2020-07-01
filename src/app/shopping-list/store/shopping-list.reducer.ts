@@ -9,7 +9,7 @@ export interface State{
 }
 
 export interface AppState{
-    shopinList:State;
+    shoppingList:State;
 }
 
 const initialState: State = {
@@ -47,19 +47,21 @@ export function shoppingListReducer(
             break;
         
         case ShoppingListActions.UPDATE_INGREDIENT:            
-            const ingredient = state.ingredients[action.payLoad.index];
+            const ingredient = state.ingredients[state.editedIngredientIndex];
             const updatedIngredient = {
                 ...ingredient,
-                ...action.payLoad.ingredient
+                ...action.payLoad
             }
             const updatedIngredients = [
                 ...state.ingredients
             ]
-            updatedIngredients[action.payLoad.index] = updatedIngredient;
+            updatedIngredients[state.editedIngredientIndex] = updatedIngredient;
 
             return {
                 ...state,
-                ingredients: updatedIngredients
+                ingredients: updatedIngredients,
+                editedIngredientIndex: -1,
+                editedIngredient:null
             };
 
         case ShoppingListActions.DELETE_INGREDIENT:
@@ -68,8 +70,11 @@ export function shoppingListReducer(
             return {
                 ...state,
                 ingredients:state.ingredients.filter((ig,igIndex) =>{
-                    return igIndex !== action.payLoad;
-                })};
+                    return igIndex !== state.editedIngredientIndex;
+                }),
+                editedIngredientIndex: -1,
+                editedIngredient:null
+            };
 
         case ShoppingListActions.START_EDIT:
             return{

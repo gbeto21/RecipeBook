@@ -14,14 +14,14 @@ import * as ShoppingListActions from './store/shopping-list.actions'
 export class ShoppingListComponent implements OnInit, OnDestroy {
 
   ingredients: Observable<{ingredients: Ingredient[]}>;
-  private idChangeSub: Subscription;
+  private subscription: Subscription;
   
   constructor(
     private slService: ShoppingListService,
     private store: Store<fromShoppingList.AppState>) { }
 
   ngOnInit(): void {
-    this.ingredients = this.store.select('shopinList');
+    this.ingredients = this.store.select('shoppingList');
     // this.ingredients = this.slService.getIngreients();
     // this.idChangeSub = this.slService
     // .ingredientsChanged
@@ -33,7 +33,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy():void{
     // this.idChangeSub.unsubscribe();
-    this.ingredients = this.store.select('shopinList');
+    this.ingredients = this.store.select('shoppingList');
   }
 
   onEditItem(index: number){
