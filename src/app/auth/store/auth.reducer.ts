@@ -1,12 +1,17 @@
 import { User } from '../user.model';
 import * as AuthActions from './auth.actions';
+import { ActionSequence } from 'protractor';
 
 export interface State{
     user: User;
+    authError: string;
+    loading: boolean;
 }
 
 const initialState: State={
-    user: null
+    user: null,
+    authError:null,
+    loading: false,
 }
 
 export function authReducer(
@@ -23,9 +28,26 @@ export function authReducer(
                 );
             return{
                 ...state,
-                user
+                authError: null,
+                user: user,
+                loading: false
             };
             break;
+
+        case AuthActions.LOGIN_START:
+            return{
+                ...state,
+                authError:null,
+                loading: true
+            }
+
+        case AuthActions.LOGIN_FAIL:
+            return {
+                ...state,
+                user: null,
+                authError: action.payload,
+                loading: false
+            }
 
         case AuthActions.LOGOUT:
             return {
